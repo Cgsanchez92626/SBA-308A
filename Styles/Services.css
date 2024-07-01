@@ -1,0 +1,14 @@
+/* styles.css */
+
+.zip-container {
+    padding-top: 50px;
+    text-align: center;
+  }
+  
+  .zip-container input[type="text"] {
+    margin-right: 10px;
+  }
+  
+  .zip-container button {
+    cursor: pointer;
+  }

@@ -1,3 +1,4 @@
+import  {buildServicesPage}  from '/Pages/Services.js'; // Adjust the path if needed
 // Menu data structure
 export const menuLinks = [
   { text: "home", href: "/Pages/index.html" },
@@ -22,34 +23,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const topMenuEl = document.getElementById("top-menu");
   const subMenuEl = document.getElementById("sub-menu");
 
+  // Set styles for top menu
   topMenuEl.style.height = "100%";
   topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
   topMenuEl.classList.add("flex-around");
 
+  // Set styles for sub menu
   subMenuEl.style.height = "100%";
   subMenuEl.style.backgroundColor = "var(--sub-menu-bg)";
   subMenuEl.classList.add("flex-around");
   subMenuEl.style.position = "absolute";
   subMenuEl.style.top = "0";
 
+  // Build top menu
   menuLinks.forEach(function (link) {
     const a = document.createElement("a");
     a.setAttribute("href", link.href);
     a.textContent = link.text;
     topMenuEl.appendChild(a);
 
-    // Direct navigation for specific links
-    if (link.text.toLowerCase() === "home") {
-      a.addEventListener("click", function (event) {
-        event.preventDefault();
-        window.location.href = link.href;
-      });
-    }
     // Handle "Services" menu option
+    // console.log("In Global.js before listener", link.text.toLowerCase() )
     if (link.text.toLowerCase() === "services") {
       a.addEventListener("click", function (event) {
         event.preventDefault();
         buildServicesPage();
+        window.location.href = link.href;
+      });
+    }
+    // Direct navigation for specific links
+    if (link.text.toLowerCase() === "home") {
+      a.addEventListener("click", function (event) {
+        event.preventDefault();
         window.location.href = link.href;
       });
     }
@@ -100,4 +105,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // console.log("Submenu element after creation:", subMenuEl);
   }
+  console.log("Global.js loaded");
 });
