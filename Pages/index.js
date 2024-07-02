@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set attributes
   hr.style.marginTop = "70px"; // Adjust margin top to move the image down
   img.id = "myLogo";
-  img.src = "/Images/PremierRealtyAssociates_logo jpg.jpg";
+  img.src = "../Images/PremierRealtyAssociates_logo jpg.jpg";
   img.height = "200px";
   img.width = "300px";
   img.style.flexDirection = "column";

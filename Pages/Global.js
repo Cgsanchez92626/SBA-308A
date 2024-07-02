@@ -1,20 +1,19 @@
-import  {buildServicesPage}  from '/Pages/Services.js'; // Adjust the path if needed
 // Menu data structure
 export const menuLinks = [
-  { text: "home", href: "/Pages/index.html" },
+  { text: "home", href: "./index.html" },
   {
     text: "about me",
     href: "#",
   },
   {
     text: "services",
-    href: "/Pages/Services.html",
+    href: "./Services.html",
   },
   {
     text: "account",
     href: "#",
     subLinks: [
-      { classname: "signin", text: "sign in", href: "/Pages/Login.html" },
+      { classname: "signin", text: "sign in", href: "./Login.html" },
     ],
   },
 ];
@@ -47,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (link.text.toLowerCase() === "services") {
       a.addEventListener("click", function (event) {
         event.preventDefault();
-        buildServicesPage();
         window.location.href = link.href;
       });
     }
