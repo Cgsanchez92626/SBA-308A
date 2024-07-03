@@ -15,7 +15,19 @@
         <nav id="top-menu"></nav>
         <nav id="sub-menu"></nav>
       </header>
-      <main></main>
+      <main>
+        <div class="zip-container">
+          <input type="text" placeholder="Enter zip code" id="zipInput" style="width: 50%; padding: 10px; margin-bottom: 15px; box-sizing: border-box;">
+          <button id="submitButton" style="width: 50%; padding: 10px; background-color: #0e9aa7; color: white; border: none; cursor: pointer;">Submit</button>
+      </div>
+      <div class="carousel-container">
+          <div class="carousel" id="carousel">
+              <!-- Property cards will be dynamically added here -->
+          </div>
+          <button class="prev-btn" id="prevBtn">&lt; Previous</button>
+          <button class="next-btn" id="nextBtn">Next &gt;</button>
+      </div>
+      </main>
     <!-- Axios -->
        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
        <!-- <script src="/Pages/index.js"></script> -->
