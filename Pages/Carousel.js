@@ -1,4 +1,6 @@
 // Carousel.js
+let propertyIndex = 0;
+
 export function buildCarousel(container, properties) {
   container.innerHTML = ''; // Clear existing content
 
@@ -47,7 +49,7 @@ export function buildCarousel(container, properties) {
       // Create link for detail URL
       const detailLink = document.createElement('a');
         detailLink.href = `https://www.zillow.com${property.detailUrl}`;
-        detailLink.textContent = 'View Details';
+        detailLink.textContent = 'View Full Details';
         detailLink.target = '_blank'; // Open link in a new tab
         details.appendChild(detailLink);
 
@@ -65,35 +67,33 @@ export function buildCarousel(container, properties) {
 
 // Function to scroll the Carousel
 export function setupCarouselNavigation(carouselElement) {
-  const prevBtn = document.createElement('button');
-  prevBtn.classList.add('prev-btn');
-  prevBtn.textContent = '< Previous';
-  carouselElement.parentNode.insertBefore(prevBtn, carouselElement);
-
-  const nextBtn = document.createElement('button');
-  nextBtn.classList.add('next-btn');
-  nextBtn.textContent = 'Next >';
-  carouselElement.parentNode.insertBefore(nextBtn, carouselElement.nextSibling);
-
-  let propertyIndex = 0;
-
+  // const carouselEl = document.querySelector('.carousel');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  
+  // Define the Event Listeners for the carousel  navigation
   prevBtn.addEventListener('click', function () {
-      navigateCarousel(carouselElement, -1, propertyIndex);
+      navigateCarousel(carouselElement, -1);
   });
 
   nextBtn.addEventListener('click', function () {
-      navigateCarousel(carouselElement, 1, propertyIndex);
+      navigateCarousel(carouselElement, 1);
   });
 }
 
-function navigateCarousel(carouselElement, direction, currentIndex) {
+export function navigateCarousel(carouselElement, direction) {
   const propertyCards = carouselElement.querySelectorAll('.property-card');
   const cardWidth = propertyCards[0].offsetWidth;
-  const numCards = propertyCards.length;
-  const maxIndex = numCards - 1;
+  console.log("cardWidth: ", cardWidth);
 
-  propertyIndex = (currentIndex + direction + numCards) % numCards;
+  // Calculate the new property index 
+  propertyIndex = (propertyIndex + direction + propertyCards.length) % propertyCards.length;
+  console.log("propertyIndex: ", propertyIndex);
+
+  // Calculate translateX based on propertyIndex
   const translateX = -propertyIndex * cardWidth;
+  console.log("translateX: ", translateX);
 
+  // Apply the transform style to carouselElement
   carouselElement.style.transform = `translateX(${translateX}px)`;
 }

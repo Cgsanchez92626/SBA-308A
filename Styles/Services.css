@@ -1,7 +1,7 @@
 /* styles.css */
 
 body {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   background-color: #f0f0f0;
   margin: 0;
   padding: 0;
@@ -44,25 +44,32 @@ main {
 }
 
 .carousel {
-  display: flex;
-  flex-wrap: nowrap;
-  transition: transform 0.3s ease; /* Smooth transition for carousel movement */
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+  /* white-space: nowrap; */
+  display: flex; /* Ensure children are arranged in a row */
+  flex-wrap: nowrap; /* Prevent wrapping to a new line */
+  justify-content: flex-start; /* Align items at the start */
+  position: relative; /* Ensure positioning context for absolute elements */
 }
 
 .property-card {
-  width: 300px;
-  padding: 10px;
-  margin-right: 20px;
+  /* display: inline-block; */
+  flex: 0 0 auto; /* Ensure cards do not grow or shrink */
+  width: 300px; /* Set a fixed width for each property card */
+  margin-right: 10px; /* Add margin between cards */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding and border in total width */
 }
 
 .property-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  /* width: 100%; */
+  /* height: auto; */
+  /* object-fit: cover; */
+  max-height: 100%;
 }
 
 .property-card .details {
@@ -107,14 +114,14 @@ main {
   right: 10px;
 }
 
-@media (max-width: 768px) {
-  .property-card, .carousel, .carousel-container {
-      width: 100%; /* Full width for property cards on smaller screens */
-      max-width: 300px; Set max-width for larger screens
-      margin-right: 0; /* Remove margin-right on smaller screens */
-      flex : 0 0 33.333333%;
-      display: block;
-    }
+@media (min-width: 768px) {
+  .property-card{
+      /* width: 100%; Full width for property cards on smaller screens */
+      flex: 0 0 33.3333333%;
+      /* max-width: none; Set max-width for larger screens */
+      margin-right: 10px; /* Remove margin-right on smaller screens */
+      /* display: block; */
+  }
 
   .prev-btn, .next-btn {
       font-size: 14px; /* Adjust font size for smaller screens */
