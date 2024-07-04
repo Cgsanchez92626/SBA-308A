@@ -5,7 +5,7 @@ This is a refactor of a site built in SBA-307,modified in SBA-316, and now again
 I have learned while wanting to satisfy the requirements for the assignment SBA-308A
 This delivery is focused on delivering the Services Tab (when Clicked)
 It allows the user to input a zipcode 
-The entry is used to make a call usinf rapidapi's API to zillow
+The entry is used to make a call using rapidapi's API to zillow
 Results are brought back and the user can scroll through them and click on a link which will take them to the full listing details on zillow.
 At a high level, I have:
 - reused Global.js and Global.css to maintain the look/feel and the
