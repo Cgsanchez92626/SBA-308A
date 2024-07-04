@@ -84,16 +84,21 @@ export function setupCarouselNavigation(carouselElement) {
 export function navigateCarousel(carouselElement, direction) {
   const propertyCards = carouselElement.querySelectorAll('.property-card');
   const cardWidth = propertyCards[0].offsetWidth;
-  console.log("cardWidth: ", cardWidth);
+  // console.log("cardWidth: ", cardWidth);
 
   // Calculate the new property index 
   propertyIndex = (propertyIndex + direction + propertyCards.length) % propertyCards.length;
-  console.log("propertyIndex: ", propertyIndex);
+  // console.log("propertyIndex: ", propertyIndex);
 
   // Calculate translateX based on propertyIndex
   const translateX = -propertyIndex * cardWidth;
-  console.log("translateX: ", translateX);
+  // console.log("translateX: ", translateX);
 
+  // Adjust translateX for wrapping at the end
+  if (propertyIndex < 0) {
+    propertyIndex = propertyCards.length - 1; // Wrap to the last property-card
+    translateX = -propertyIndex * cardWidth;
+  }
   // Apply the transform style to carouselElement
   carouselElement.style.transform = `translateX(${translateX}px)`;
 }

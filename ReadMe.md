@@ -1,16 +1,18 @@
-# SBA-316
-
-My repository name is: "# SBA-316"
-This is the link to the GitHub Directory: https://github.com/Cgsanchez92626/SBA-316.git
-This is a refactor of a site built in SBA-307, modifying it to put into it all the things
-I have learned while wanting to satisfy the requirements for the assignment.
-This wedsite is a location where users will ultimately be able to gain information about the real estate services offered.
-Users can: - Sign In - For this project I will work to deliver the refactored home page and the Login page.
-
-- Future Delivery ...
-- learn a little bit about my passion for real estate.
-- subscribe for marketing information (functionality to be delevered later :)
-- Request a consultation for a call back regarding a real estate discussion
-  they would like to have (functionality to be delevered later :)
-- Create a CRM to manage Properties and Property Owners
 # SBA-308A
+My repository name is: "# SBA-308A"
+This is the link to the GitHub Directory: https://github.com/Cgsanchez92626/SBA-316.git
+This is a refactor of a site built in SBA-307,modified in SBA-316, and now again, modifying it to put into it all the things
+I have learned while wanting to satisfy the requirements for the assignment SBA-308A
+This delivery is focused on delivering the Services Tab (when Clicked)
+It allows the user to input a zipcode 
+The entry is used to make a call usinf rapidapi's API to zillow
+Results are brought back and the user can scroll through them and click on a link which will take them to the full listing details on zillow.
+At a high level, I have:
+- reused Global.js and Global.css to maintain the look/feel and the
+navigation bars.
+- Introduced Services.html, Services.js, Carousel.js, Services.css
+  Mainly to practice using an API to get data, I had issues finding anything in the realestate world that I could post to without having to dish out some mulah :)
+  - used import/export to share processing across the web-site
+  - Use Async on some of the functions to boost performance
+  - Learned a ton, in using the developers tools to get the Carousel to display and move as I prefered it to.
+  - Ensured nothing broke on the existing functionality
