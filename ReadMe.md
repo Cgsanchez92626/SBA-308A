@@ -1,6 +1,6 @@
 # SBA-308A
 My repository name is: "# SBA-308A"
-This is the link to the GitHub Directory: https://github.com/Cgsanchez92626/SBA-316.git
+This is the link to the GitHub Directory: https://github.com/Cgsanchez92626/SBA-308A.git
 This is a refactor of a site built in SBA-307,modified in SBA-316, and now again, modifying it to put into it all the things
 I have learned while wanting to satisfy the requirements for the assignment SBA-308A
 This delivery is focused on delivering the Services Tab (when Clicked)
